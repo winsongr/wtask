@@ -15,8 +15,8 @@ class LoginView extends GetView<LoginController> {
       child: Column(
         children: [
           SizedBox(
-            child: Image.asset('assets/auth.png'),
             width: Get.width * 0.6,
+            child: Image.asset('assets/auth.png'),
           ),
           Form(
               key: _formKey,
@@ -36,19 +36,22 @@ class LoginView extends GetView<LoginController> {
                       controller: controller.passwordController)
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () {},
-            child: Text(
+            onPressed: () {
+              controller.formValidate();
+            },
+            style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
+            child: const Text(
               "Login",
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.red,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
         ],
       ),

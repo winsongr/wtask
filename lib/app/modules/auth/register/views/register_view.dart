@@ -17,7 +17,7 @@ class RegisterView extends GetView<RegisterController> {
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           InkWell(
@@ -41,7 +41,7 @@ class RegisterView extends GetView<RegisterController> {
                       : null,
                 ),
               )),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Form(
               key: _formKey,
               child: Column(
@@ -120,23 +120,24 @@ class RegisterView extends GetView<RegisterController> {
                       controller: controller.confirmPasswordcontroller)
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
             onPressed: () {
               controller.formValidate();
             },
-            child: Text(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
+            child: const Text(
               "Sign Up",
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.red,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

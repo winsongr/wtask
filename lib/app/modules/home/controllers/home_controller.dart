@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
+import 'package:wtask/app/modules/auth/register/controllers/register_controller.dart';
+import 'package:wtask/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  logout() {
+    firebaseAuth.signOut().then((value) {
+      Get.offAndToNamed(Routes.AUTH);
+    });
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  var tabIndex = 0;
+ void changeTabIndex(int index) {
+    tabIndex = index;
+    update();
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

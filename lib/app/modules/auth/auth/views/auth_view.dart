@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wtask/app/modules/auth/login/views/login_view.dart';
 import 'package:wtask/app/modules/auth/register/views/register_view.dart';
-import 'package:wtask/app/routes/app_pages.dart';
 
 import '../controllers/auth_controller.dart';
 

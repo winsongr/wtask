@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CusTextField extends StatelessWidget {
-  CusTextField(
-      {Key? key,
-      this.controller,
-      this.data,
-      required this.hintext,
-      this.isObsecure = false, this.TextInputType})
-      : super(key: key);
+  CusTextField({
+    Key? key,
+    this.controller,
+    this.data,
+    required this.hintext,
+    this.isObsecure = false,
+    this.TextInputType,
+  }) : super(key: key);
   final TextEditingController? controller;
   final IconData? data;
   final String hintext;
