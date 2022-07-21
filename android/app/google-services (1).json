@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "463433650299",
+    "project_id": "wtaskk",
+    "storage_bucket": "wtaskk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463433650299:android:9958eff22f52a72d6412de",
+        "android_client_info": {
+          "package_name": "com.winson.wtask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463433650299-ieoi4q23j2g57ubi76j5tqi73me87gvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winson.wtask",
+            "certificate_hash": "1a2d6c1760b09f110809cf40bf348aaf2679f790"
+          }
+        },
+        {
+          "client_id": "463433650299-0mdhrss8vjdtpbes7bag87ciafe3bnbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmze8yACddyxt362wE9I4UlDg5CmOJspk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463433650299-0mdhrss8vjdtpbes7bag87ciafe3bnbl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
