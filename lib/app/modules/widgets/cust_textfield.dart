@@ -19,7 +19,7 @@ class CusTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          color: Colors.white,
+          color: Colors.black12,
           borderRadius: BorderRadius.all(Radius.circular(10))),
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(10),

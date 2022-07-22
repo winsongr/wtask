@@ -1,9 +1,5 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:wtask/app/modules/project/views/add_project.dart';
 
 import '../modules/auth/auth/bindings/auth_binding.dart';
 import '../modules/auth/auth/views/auth_view.dart';
@@ -63,6 +59,11 @@ class AppPages {
     GetPage(
       name: _Paths.PROJECT,
       page: () => const ProjectView(),
+      binding: ProjectBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDPROJECT,
+      page: () =>  AddProject(),
       binding: ProjectBinding(),
     ),
   ];
