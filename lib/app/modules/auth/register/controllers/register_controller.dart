@@ -6,14 +6,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wtask/app/modules/widgets/err_dialog.dart';
 import 'package:wtask/app/modules/widgets/loading_dialog.dart';
 import 'package:firebase_storage/firebase_storage.dart' as fstorage;
 import 'package:wtask/app/routes/app_pages.dart';
 
 FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-SharedPreferences? sharedPreferences;
 
 class RegisterController extends GetxController {
   TextEditingController namecontroller = TextEditingController();
@@ -120,49 +118,5 @@ class RegisterController extends GetxController {
       'userWork': occupatiocontroller.text.toString().trim(),
       'userExp': expcontroller.text.toString().trim()
     });
-    sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences!.setString('userUid', currentUser.uid);
-    await sharedPreferences!.setString(
-      'userEmail',
-      currentUser.email.toString(),
-    );
-    await sharedPreferences!.setString(
-      'userName',
-      namecontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userAvatarurl',
-      userprofile,
-    );
-    await sharedPreferences!.setString(
-      'userPhone',
-      phonecontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userAddress',
-      addresscontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userCity',
-      citycontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userState',
-      statecontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userCountry',
-      countrycontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userCompany',
-      companycontroller.text.toString().trim(),
-    );
-    await sharedPreferences!.setString(
-      'userWork',
-      occupatiocontroller.text.toString().trim(),
-    );
-    await sharedPreferences!
-        .setString('userExp', expcontroller.text.toString().trim());
   }
 }

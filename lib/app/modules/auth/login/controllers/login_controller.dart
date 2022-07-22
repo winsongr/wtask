@@ -48,36 +48,12 @@ class LoginController extends GetxController {
         .collection("users")
         .doc(currentUser.uid)
         .get()
-        .then((snapshot) async {
+        .then((snapshot) {
       if (snapshot.exists) {
-        // await sharedPreferences!.setString('uid', currentUser.uid);
-        // await sharedPreferences!
-        //     .setString('userEmail', snapshot.data()!['userEmail']);
-        // await sharedPreferences!
-        //     .setString('userName', snapshot.data()!['userName']);
-        // await sharedPreferences!
-        //     .setString('userAvatarurl', snapshot.data()!['userAvatarurl']);
-        // await sharedPreferences!
-        //     .setString('userPhone', snapshot.data()!['userPhone']);
-        // await sharedPreferences!
-        //     .setString('userAddress', snapshot.data()!['userAddress']);
-        // await sharedPreferences!
-        //     .setString('userCity', snapshot.data()!['userCity']);
-        // await sharedPreferences!
-        //     .setString('userState', snapshot.data()!['userState']);
-        // await sharedPreferences!
-        //     .setString('userCountry', snapshot.data()!['userCountry']);
-        // await sharedPreferences!
-        //     .setString('userCompany', snapshot.data()!['userCompany']);
-        // await sharedPreferences!
-        //     .setString('userWork', snapshot.data()!['userWork']);
-        // await sharedPreferences!
-        //     .setString('userExp', snapshot.data()!['userExp']);
-
-        Get.off(Routes.HOME);
+        Get.offAndToNamed(Routes.HOME);
       } else {
         firebaseAuth.signOut();
-        Get.off(Routes.AUTH);
+        Get.toNamed(Routes.AUTH);
         Get.dialog(const ErrorDialog(
           message: "No record found!",
         ));

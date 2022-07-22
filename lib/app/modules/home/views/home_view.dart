@@ -16,7 +16,7 @@ class HomeView extends GetView<HomeController> {
         builder: ((controller) => Scaffold(
               appBar: AppBar(
                 title:
-                    Text('Welcome ${sharedPreferences?.getString('userName')}'),
+                    Text('Welcome'),
                 actions: [
                   IconButton(
                       onPressed: () {

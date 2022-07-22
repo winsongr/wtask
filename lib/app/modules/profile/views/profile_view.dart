@@ -13,8 +13,8 @@ class ProfileView extends GetView<ProfileController> {
         body: Column(
       children: [
         CircleAvatar(
-          backgroundImage:
-              NetworkImage(sharedPreferences!.getString("userAvatarurl")!),
+          // backgroundImage:
+              // NetworkImage(sharedPreferences!.getString("userAvatarurl")!),
         )
       ],
     ));
