@@ -6,9 +6,15 @@ class ErrorDialog extends StatelessWidget {
   final String? message;
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return AlertDialog(
       key: key,
-      content: Text(message!),
+      content: Text(
+        message!,
+        textScaleFactor: Get.textScaleFactor,
+        style: tstyle.titleLarge,
+      ),
       actions: [
         ElevatedButton(
           onPressed: () {
@@ -17,8 +23,12 @@ class ErrorDialog extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             primary: Colors.red,
           ),
-          child: const Center(
-            child: Text("OK"),
+          child: Center(
+            child: Text(
+              "OK",
+              style: tstyle.button,
+              textScaleFactor: Get.textScaleFactor,
+            ),
           ),
         )
       ],

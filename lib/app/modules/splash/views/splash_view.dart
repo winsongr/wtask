@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,6 +10,8 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     WidgetsBinding.instance
         .addPostFrameCallback((_) async => await controller.startTimer());
+    var tstyle = Theme.of(context).textTheme;
+
     return Material(
       child: Container(
         color: Colors.white,
@@ -25,14 +26,13 @@ class SplashView extends GetView<SplashController> {
               const SizedBox(
                 height: 10,
               ),
-              const Padding(
-                padding: EdgeInsets.all(18),
-                child: Text(
-                  'W Task',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.black54, fontSize: 40, letterSpacing: 3),
-                ),
+              Padding(
+                padding: const EdgeInsets.all(18),
+                child: Text('W Task',
+                    textAlign: TextAlign.center,
+                    textScaleFactor: Get.textScaleFactor,
+                    style: tstyle.displayMedium!
+                        .copyWith(color: Colors.black54, letterSpacing: 3)),
               )
             ],
           ),

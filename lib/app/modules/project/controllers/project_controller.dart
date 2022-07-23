@@ -8,12 +8,6 @@ import 'package:wtask/app/routes/app_pages.dart';
 
 class ProjectController extends GetxController {
   final User? user = FirebaseAuth.instance.currentUser;
-  // CollectionReference users = FirebaseFirestore.instance.collection('users');
-  // CollectionReference projects = FirebaseFirestore.instance
-  //     .collection('users')
-  //     .doc()
-  //     .collection('projects');
-  // QuerySnapshot<Object?>? doc;
 
   TextEditingController proController = TextEditingController();
   TextEditingController desController = TextEditingController();
