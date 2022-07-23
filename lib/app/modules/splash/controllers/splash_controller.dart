@@ -1,4 +1,4 @@
-import 'dart:async';
+ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -8,9 +8,9 @@ class SplashController extends GetxController {
   Future<void> startTimer() async {
     Timer(const Duration(seconds: 1), () {
       if (FirebaseAuth.instance.currentUser != null) {
-        Get.offAndToNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       } else {
-        Get.toNamed(Routes.AUTH);
+        Get.offAllNamed(Routes.AUTH);
       }
     });
   }

@@ -13,7 +13,8 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
         builder: ((controller) => Scaffold(
-              appBar: AppBar(automaticallyImplyLeading: false,
+              appBar: AppBar(
+                automaticallyImplyLeading: false,
                 title: const Text('W Task'),
                 actions: [
                   IconButton(
@@ -41,7 +42,6 @@ class HomeView extends GetView<HomeController> {
                       label: 'Profile')
                 ],
               ),
-              
             )));
   }
 }

@@ -1,41 +1,26 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wtask/app/modules/widgets/cust_textfield.dart';
 import 'package:wtask/app/modules/widgets/err_dialog.dart';
 import 'package:wtask/app/modules/widgets/loading_dialog.dart';
 import 'package:wtask/app/routes/app_pages.dart';
 
 class ProjectController extends GetxController {
   final User? user = FirebaseAuth.instance.currentUser;
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
-  DocumentSnapshot? doc;
-  var allProjects;
+  // CollectionReference users = FirebaseFirestore.instance.collection('users');
+  // CollectionReference projects = FirebaseFirestore.instance
+  //     .collection('users')
+  //     .doc()
+  //     .collection('projects');
+  // QuerySnapshot<Object?>? doc;
+
   TextEditingController proController = TextEditingController();
   TextEditingController desController = TextEditingController();
   TextEditingController cateController = TextEditingController();
   TextEditingController startController = TextEditingController();
   TextEditingController endController = TextEditingController();
   TextEditingController noteController = TextEditingController();
-
-  late String pId;
-  String? proName;
-  String? descRip;
-  String? cateGory;
-  String? startDate;
-  String? endDate;
-  String? noteS;
-  @override
-  void onInit() async {
-    super.onInit();
-    print("init");
-    await getAllProjects();
-    print("initend");
-  }
 
   openaddProject() {
     Get.toNamed(Routes.ADDPROJECT);
@@ -103,18 +88,5 @@ class ProjectController extends GetxController {
     endController.text = '';
     noteController.text = '';
     uniqueIdName = DateTime.now().millisecondsSinceEpoch.toString();
-  }
-
-  Future getAllProjects() async {
-    allProjects = await users.doc(user?.uid).collection('projects').snapshots();
-    pId = doc?['pid'];
-    proName = doc?["projectName"];
-    descRip = doc?["desc"];
-    cateGory = doc?["cate"];
-    startDate = doc?["start"];
-    endDate = doc?["end"];
-    noteS = doc?["note"];
-    print(allProjects!.docs.length);
-    print(pId);
   }
 }

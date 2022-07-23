@@ -50,7 +50,7 @@ class LoginController extends GetxController {
         .get()
         .then((snapshot) {
       if (snapshot.exists) {
-        Get.offAndToNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       } else {
         firebaseAuth.signOut();
         Get.toNamed(Routes.AUTH);
