@@ -8,9 +8,16 @@ class AddProject extends GetView<ProjectController> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return Scaffold(
         appBar: AppBar(
-          title: Text('Add Project'),
+          title: Text(
+            'Add Project',
+            style: tstyle.titleLarge!,
+            textScaleFactor: Get.textScaleFactor,
+          ),
+          centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Column(children: [
@@ -65,10 +72,11 @@ class AddProject extends GetView<ProjectController> {
                 primary: Colors.red,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
-            child: const Text(
+            child: Text(
               "Add Project",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: tstyle.bodyMedium!.copyWith(color: Colors.white),
+              textScaleFactor: Get.textScaleFactor,
+              textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(

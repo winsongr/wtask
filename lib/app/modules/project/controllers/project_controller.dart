@@ -57,7 +57,7 @@ class ProjectController extends GetxController {
     clearForm();
 
     Get.dialog(AlertDialog(
-      content: const Text("Success"),
+      content: const Text("Success",),
       actions: [
         ElevatedButton(
           onPressed: () {

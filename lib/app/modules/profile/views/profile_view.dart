@@ -8,6 +8,8 @@ class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return Obx(
       () => Scaffold(
           body: controller.isLoading.value
@@ -15,9 +17,9 @@ class ProfileView extends GetView<ProfileController> {
                   color: Colors.red,
                 )
               : SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
                       children: [
                         SizedBox(
                           height: Get.height * 0.3,
@@ -34,50 +36,67 @@ class ProfileView extends GetView<ProfileController> {
                                     )),
                           ),
                         ),
-                        ListTile(
-                          title: const Text("Name"),
-                          trailing: Text(controller.userName!),
+                        listTile(tstyle,
+                            txt: "Name",
+                            trailTxt: controller.userName!.toUpperCase()),
+                        listTile(
+                          tstyle,
+                          txt: "Email",
+                          trailTxt: controller.userEmail!,
                         ),
-                        ListTile(
-                          title: const Text("Email"),
-                          trailing: Text(controller.userEmail!),
+                        listTile(tstyle,
+                            txt: "Mobile Number",
+                            trailTxt: controller.userPhone!),
+                        listTile(
+                          tstyle,
+                          txt: "Address",
+                          trailTxt: controller.userAddress!,
                         ),
-                        ListTile(
-                          title: const Text("Mobile Number"),
-                          trailing: Text(controller.userPhone!),
+                        listTile(
+                          tstyle,
+                          txt: "City",
+                          trailTxt: controller.userCity!,
                         ),
-                        ListTile(
-                          title: const Text("Address"),
-                          trailing: Text(controller.userAddress!),
+                        listTile(
+                          tstyle,
+                          txt: "State",
+                          trailTxt: controller.userState!,
                         ),
-                        ListTile(
-                          title: const Text("City"),
-                          trailing: Text(controller.userCity!),
+                        listTile(
+                          tstyle,
+                          txt: "Country",
+                          trailTxt: controller.userCountry!,
                         ),
-                        ListTile(
-                          title: const Text("State"),
-                          trailing: Text(controller.userState!),
+                        listTile(tstyle,
+                            txt: "Company Name",
+                            trailTxt: controller.userCompany!),
+                        listTile(
+                          tstyle,
+                          txt: "Occupation",
+                          trailTxt: controller.userWork!,
                         ),
-                        ListTile(
-                          title: const Text("Country"),
-                          trailing: Text(controller.userCountry!),
+                        listTile(
+                          tstyle,
+                          txt: "Years of Experience",
+                          trailTxt: controller.userExp!,
                         ),
-                        ListTile(
-                          title: const Text("Company Name"),
-                          trailing: Text(controller.userCompany!),
-                        ),
-                        ListTile(
-                          title: const Text("Occupation"),
-                          trailing: Text(controller.userWork!),
-                        ),
-                        ListTile(
-                          title: const Text("Years of Experience"),
-                          trailing: Text(controller.userExp!),
-                        ),
+                        SizedBox(height: 15,)
                       ],
                     ),
-                ),
-              )),
+                  ),
+                )),
+    );
+  }
+
+  ListTile listTile(TextTheme tstyle,
+      {required String txt, required trailTxt}) {
+    return ListTile(
+      title: Text(
+        txt,
+        style: tstyle.titleMedium!,
+        textScaleFactor: Get.textScaleFactor,
+      ),
+      trailing: Text(trailTxt),
     );
   }
 }

@@ -10,6 +10,8 @@ class AuthView extends GetView<AuthController> {
   const AuthView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -17,16 +19,18 @@ class AuthView extends GetView<AuthController> {
         appBar: AppBar(
           toolbarHeight: 40,
           automaticallyImplyLeading: false,
-          title: const Padding(
+          title: Padding(
             padding: EdgeInsets.all(12.0),
             child: Text(
               'W Task',
+              style: tstyle.titleLarge!,
+              textScaleFactor: Get.textScaleFactor,
             ),
           ),
           centerTitle: true,
           bottom: TabBar(tabs: [
             Tab(
-              child: Row(mainAxisSize: MainAxisSize.min, children: const [
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
                 Icon(
                   Icons.lock,
                   color: Colors.white,
@@ -36,11 +40,13 @@ class AuthView extends GetView<AuthController> {
                 ),
                 Text(
                   "Login",
+                  style: tstyle.titleSmall!,
+                  textScaleFactor: Get.textScaleFactor,
                 )
               ]),
             ),
             Tab(
-              child: Row(mainAxisSize: MainAxisSize.min, children: const [
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
                 Icon(
                   Icons.person,
                   color: Colors.white,
@@ -50,6 +56,8 @@ class AuthView extends GetView<AuthController> {
                 ),
                 Text(
                   "Register",
+                  style: tstyle.titleSmall!,
+                  textScaleFactor: Get.textScaleFactor,
                 )
               ]),
             )

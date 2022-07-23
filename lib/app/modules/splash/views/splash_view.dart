@@ -31,7 +31,7 @@ class SplashView extends GetView<SplashController> {
                 child: Text('W Task',
                     textAlign: TextAlign.center,
                     textScaleFactor: Get.textScaleFactor,
-                    style: tstyle.displayMedium!
+                    style: tstyle.headlineSmall!
                         .copyWith(color: Colors.black54, letterSpacing: 3)),
               )
             ],

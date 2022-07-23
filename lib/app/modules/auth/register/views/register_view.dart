@@ -13,6 +13,8 @@ class RegisterView extends GetView<RegisterController> {
 
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -131,10 +133,11 @@ class RegisterView extends GetView<RegisterController> {
                 primary: Colors.red,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
-            child: const Text(
+            child: Text(
               "Sign Up",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: tstyle.button!
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+              textScaleFactor: Get.textScaleFactor,
             ),
           ),
           const SizedBox(

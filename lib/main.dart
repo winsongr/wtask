@@ -15,7 +15,7 @@ void main() async {
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
+        theme: ThemeData(fontFamily: 'Montserrat',
           primaryColor: Colors.amber.shade300,
           primarySwatch: Colors.amber,
         )),

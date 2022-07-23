@@ -11,17 +11,23 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var tstyle = Theme.of(context).textTheme;
+
     return GetBuilder<HomeController>(
         builder: ((controller) => Scaffold(
               appBar: AppBar(
                 automaticallyImplyLeading: false,
-                title: const Text('W Task'),
+                title: Text(
+                  'W Task',
+                  style: tstyle.titleLarge!,
+                  textScaleFactor: Get.textScaleFactor,
+                ),
                 actions: [
                   IconButton(
                       onPressed: () {
                         controller.logout();
                       },
-                      icon: const Icon(Icons.logout))
+                      icon: const Icon(Icons.logout),color: Colors.black,)
                 ],
               ),
               body: IndexedStack(
