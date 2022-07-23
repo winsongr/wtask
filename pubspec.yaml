@@ -1,7 +1,7 @@
 name: wtask
 version: 1.0.0+1
 publish_to: none
-description: A new Flutter project.
+description: Project Management App.
 environment:
   sdk: '>=2.17.6 <3.0.0'
 

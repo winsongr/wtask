@@ -100,10 +100,12 @@ class ProjectView extends GetView<ProjectController> {
                       children: [
                         Text("Description",
                             textScaleFactor: Get.textScaleFactor,
-                            style: tstyle.titleMedium!),
-                        Text(descRip,
-                            textScaleFactor: Get.textScaleFactor,
-                            style: tstyle.bodyMedium!)
+                            style: tstyle.titleMedium!,),
+                        Flexible(flex: 1,
+                          child: Text(descRip,
+                              textScaleFactor: Get.textScaleFactor,
+                              style: tstyle.bodyMedium!),
+                        )
                       ],
                     ),
                     const Divider(),

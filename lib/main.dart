@@ -11,7 +11,7 @@ void main() async {
 
   runApp(
     GetMaterialApp(
-        title: "WTask",
+        title: "W Task",
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         debugShowCheckedModeBanner: false,

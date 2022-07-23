@@ -8,6 +8,7 @@ class CusTextField extends StatelessWidget {
     required this.hintext,
     this.isObsecure = false,
     this.TextInputType,
+    this.max,
   }) : super(key: key);
   final TextEditingController? controller;
   final IconData? data;
@@ -15,6 +16,7 @@ class CusTextField extends StatelessWidget {
   final bool isObsecure;
   bool enabled = true;
   final TextInputType;
+  final int? max;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +26,7 @@ class CusTextField extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(10),
       child: TextFormField(
+        maxLength: max,
         keyboardType: TextInputType,
         enabled: enabled,
         controller: controller,
